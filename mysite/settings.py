@@ -24,6 +24,10 @@ SECRET_KEY = 'za_)^-+8j%e+6)rf(sc8#1eh_j07=c=y-@1*%yo-33fm$x713m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+DEBUG_PROPAGATE_EXCEPTIONS = True
+
+
 
 ALLOWED_HOSTS = []
 
@@ -37,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # custom apps ;
+    # custom apps :
     'blog',
 ]
 
@@ -65,6 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.core.context_processors.static',
             ],
         },
     },
@@ -122,5 +128,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Nous allons aussi devoir ajouter un chemin d'accès pour les fichiers statiques (nous en apprendrons plus sur les fichiers statiques et CSS plus tard dans le tutoriel). 
+# Nous allons aussi devoir ajouter un chemin d'acces pour les fichiers statiques (nous en apprendrons plus sur les fichiers statiques et CSS plus tard dans le tutoriel). 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
